@@ -4,6 +4,12 @@
 
 ### :large_blue_diamond: **PowerShell**
 Note: Done By Reading The Documentation And Learning The Command Line Not A Random Guide On The Internet
+##
+
+### :small_orange_diamond:**Change System Name**(restart)
+```shell
+Rename-Computer -NewName "Sys Name" -restart
+```
 
 ##
 
@@ -17,6 +23,8 @@ Set-NetConnectionProfile -InterfaceAlias Ethernet -NetworkCategory "Private"
 ### :small_orange_diamond:**Set Network IPs**
 ```shell
 Netsh interface ip set address “Ethernet” static "IP Adress" "Net Mask" "Gateway Adress"
+```
+```shell
 Netsh interface ip add dns “Ethernet” "IP Adress"
 ```
 
@@ -29,7 +37,8 @@ Netsh interface ip add dns “Ethernet” "IP Adress"
 ### :small_orange_diamond:**Enable Network Discovery On Private Network & Disable on Public**
 ```shell
 Get-NetFirewallProfile -Name Private | Get-NetFirewallRule | ? DisplayGroup -like 'Network Discovery' | Enable-NetFirewallRule
-
+```
+```shell
 Get-NetFirewallProfile -Name Public | Get-NetFirewallRule | ? DisplayGroup -like 'Network Discovery' | Disable-NetFirewallRule
 ```
 ##
@@ -37,9 +46,12 @@ Get-NetFirewallProfile -Name Public | Get-NetFirewallRule | ? DisplayGroup -like
 ### :small_orange_diamond:**Enable File Sharing On Private Network & Disable on Public**
 ```shell
 Get-NetFirewallRule | ? DisplayGroup  -like 'File and Printer Sharing' | ? Profile -like 'Private, Public' | Set-NetFirewallRule -Profile Private
-
+```
+```shell
 Get-NetFirewallProfile -Name Private | Get-NetFirewallRule | ? DisplayGroup -like 'File and Printer Sharing' | Enable-NetFirewallRule
+```
 #Qual a diferenca entre File sharing over smbdirect and not
+```shell
 Get-NetFirewallProfile -Name Public | Get-NetFirewallRule | ? DisplayGroup -like 'File and Printer Sharing' | Disable-NetFirewallRule
 ```
 ##
@@ -48,9 +60,9 @@ Get-NetFirewallProfile -Name Public | Get-NetFirewallRule | ? DisplayGroup -like
 >!Dont Know If We Really Need It In This Case
 >
 >https://learn.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server
-```shell
-Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
-```
+>```shell
+>Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
+>```
 
 - - -
 
@@ -83,5 +95,8 @@ Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
 ![](gifs/TurnOn_NetworkShare.gif)
 
 ##
+
+*Change Sys Name
+*Stop remote auth to specific users
 
 ---

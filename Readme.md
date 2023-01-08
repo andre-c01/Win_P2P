@@ -30,10 +30,6 @@ Netsh interface ip add dns “Ethernet” "IP Adress"
 
 ##
 
-> https://learn.microsoft.com/en-us/powershell/module/netsecurity/enable-netfirewallrule?view=windowsserver2022-ps
->
-> https://learn.microsoft.com/en-us/powershell/module/netsecurity/copy-netfirewallrule?view=windowsserver2022-ps
-
 ### :small_orange_diamond:**Enable Network Discovery On Private Network & Disable on Public**
 ```shell
 Get-NetFirewallProfile -Name Private | Get-NetFirewallRule | ? DisplayGroup -like 'Network Discovery' | Enable-NetFirewallRule
@@ -56,13 +52,10 @@ Get-NetFirewallProfile -Name Public | Get-NetFirewallRule | ? DisplayGroup -like
 ```
 ##
 
->### :small_orange_diamond:**Enable SMBv1?**
->!Dont Know If We Really Need It In This Case
->
->https://learn.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3?tabs=server
->```shell
->Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
->```
+### :small_orange_diamond:**Enable SMBv1?**
+```shell
+Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
+```
 
 - - -
 

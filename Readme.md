@@ -59,6 +59,12 @@ Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
 
 ##
 
+### :small_orange_diamond:**Enable Simple TCPIP?**
+```shell
+```
+
+##
+
 ### :small_orange_diamond:**Create  User**
 ```shell
 net user "User Name" "PassWrd" /add
@@ -71,7 +77,7 @@ net user "User Name" "PassWrd" /add
 New-Item "Folder path" -ItemType Directory
 New-SMBShare –Name “Shared” –Path “C:\Shared” –ContinuouslyAvailable ...
 
-New-SMBShare -Name testy5 -path C:\Users\testy5 -FullAccess P2P1 , P2P3
+New-SMBShare -Name testy5 -path C:\Users\testy5 -FullAccess P2P1, P2P3
 #This gives the right perms in advenced folder share but not in the normal network share tab
 ```
 

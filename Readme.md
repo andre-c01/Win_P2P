@@ -20,7 +20,7 @@ Set-NetConnectionProfile -InterfaceAlias Ethernet -NetworkCategory "Private"
 
 ##
 
-### :small_orange_diamond:**Set Network IPs**
+### :small_orange_diamond:**Configure The Network**
 ```shell
 Netsh interface ip set address “Ethernet” static "IP Adress" "Net Mask" "Gateway Adress"
 ```
@@ -61,6 +61,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
 
 ### :small_orange_diamond:**Enable Simple TCPIP?**
 ```shell
+Enable-WindowsOptionalFeature -Online -FeatureName «!!!»
 ```
 
 ##
